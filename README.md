@@ -23,7 +23,7 @@ Personal job-search dashboard for gaming / creative-AI leadership roles.
 Every day at **08:30**, a scheduled Claude task:
 1. Re-searches all sources for openings matching the profile
 2. Writes `found-jobs.json`, then runs `python3 refresh.py` (stable IDs, firstSeen/lastSeen, 30-day age-out)
-3. Emails a summary to amotzalbert@gmail.com via Zapier Gmail
+3. Emails a daily summary via Zapier Gmail
 
 Runs only while the Claude desktop app is open; if it was closed at 08:30, it fires on next launch.
 
