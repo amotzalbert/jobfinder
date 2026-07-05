@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amotz — Job Finder</title>
+<style>
+  :root{
+    --bg:#111318; --bg2:#191c23; --card:#1e222b; --card-hover:#242936;
+    --line:#2c313d; --txt:#e8eaf0; --txt2:#9aa1b0; --txt3:#6b7280;
+    --accent:#e05a5a; --accent2:#ff8f6b; --gold:#e8b34b; --green:#4bc98a;
+    --blue:#5b9dd9; --purple:#a78bfa; --radius:12px;
+    --t1:#e8b34b; --t2:#4bc98a; --t3:#5b9dd9; --t4:#a78bfa;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding-bottom:80px}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(17,19,24,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 22px}
+  .hrow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:1200px;margin:0 auto}
+  h1{font-size:19px;letter-spacing:.12em;font-weight:800;white-space:nowrap}
+  h1 span{color:var(--accent)}
+  .updated{font-size:12px;color:var(--txt3);white-space:nowrap}
+  .updated b{color:var(--txt2)}
+  #search{flex:1;min-width:180px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:9px 14px;font-size:14px;outline:none}
+  #search:focus{border-color:var(--accent)}
+  .hbtn{background:var(--bg2);border:1px solid var(--line);color:var(--txt2);border-radius:8px;padding:8px 12px;font-size:12.5px;cursor:pointer;white-space:nowrap}
+  .hbtn:hover{color:var(--txt);border-color:var(--txt3)}
+
+  nav{max-width:1200px;margin:14px auto 0;padding:0 22px;display:flex;gap:8px;flex-wrap:wrap}
+  .tab{background:var(--bg2);border:1px solid var(--line);color:var(--txt2);border-radius:20px;padding:8px 16px;font-size:13.5px;cursor:pointer;user-select:none;display:flex;align-items:center;gap:7px}
+  .tab:hover{color:var(--txt)}
+  .tab.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+  .tab .cnt{background:rgba(255,255,255,.14);border-radius:10px;padding:0 7px;font-size:11.5px}
+  .tab:not(.active) .cnt{background:var(--card)}
+
+  main{max-width:1200px;margin:18px auto;padding:0 22px}
+  .hidden{display:none!important}
+
+  /* overview */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:22px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;cursor:pointer}
+  .stat:hover{background:var(--card-hover)}
+  .stat .n{font-size:30px;font-weight:800}
+  .stat .l{font-size:12px;color:var(--txt2);margin-top:2px}
+  .quick{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-bottom:22px}
+  .quick h3{font-size:13px;letter-spacing:.1em;color:var(--accent);margin-bottom:10px;text-transform:uppercase}
+  .quick .links{display:flex;flex-wrap:wrap;gap:8px}
+  .quick a{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:12.5px;color:var(--txt2)}
+  .quick a:hover{color:var(--txt);border-color:var(--txt3);text-decoration:none}
+
+  .sec-title{font-size:13px;letter-spacing:.1em;color:var(--accent);margin:26px 0 12px;text-transform:uppercase;font-weight:700}
+
+  /* filters */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+  .filters select{background:var(--bg2);border:1px solid var(--line);color:var(--txt2);border-radius:8px;padding:7px 10px;font-size:12.5px;outline:none;cursor:pointer}
+  .fnote{font-size:12px;color:var(--txt3);margin-left:auto}
+
+  /* job cards */
+  .job{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-bottom:12px;transition:background .12s}
+  .job:hover{background:var(--card-hover)}
+  .job.applied-dim{opacity:.65}
+  .jtop{display:flex;align-items:flex-start;gap:12px}
+  .jmain{flex:1;min-width:0}
+  .jtitle{font-size:16.5px;font-weight:700}
+  .jtitle a{color:var(--txt)}
+  .jtitle a:hover{color:var(--accent2)}
+  .jco{font-size:13.5px;color:var(--txt2);margin-top:2px}
+  .jco a{color:var(--txt2)}
+  .jco a:hover{color:var(--txt)}
+  .badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+  .badge{font-size:11px;font-weight:600;border-radius:6px;padding:2px 8px;letter-spacing:.03em;border:1px solid transparent}
+  .b-t1{color:var(--t1);border-color:var(--t1)} .b-t2{color:var(--t2);border-color:var(--t2)}
+  .b-t3{color:var(--t3);border-color:var(--t3)} .b-t4{color:var(--t4);border-color:var(--t4)}
+  .b-new{background:var(--accent);color:#fff}
+  .b-dim{color:var(--txt3);border-color:var(--line)}
+  .b-stale{color:var(--gold);border-color:var(--gold)}
+  .jfit{font-size:13px;color:var(--txt2);margin-top:9px}
+  .jmeta{font-size:11.5px;color:var(--txt3);margin-top:7px}
+  .jside{display:flex;flex-direction:column;gap:8px;align-items:flex-end;flex-shrink:0}
+  .jrow2{display:flex;gap:8px;align-items:center}
+  .star{cursor:pointer;font-size:19px;color:var(--txt3);background:none;border:none;line-height:1}
+  .star.on{color:var(--gold)}
+  select.status{background:var(--bg2);border:1px solid var(--line);color:var(--txt2);border-radius:8px;padding:6px 8px;font-size:12px;outline:none;cursor:pointer}
+  select.status.s-interested{border-color:var(--gold);color:var(--gold)}
+  select.status.s-applied{border-color:var(--blue);color:var(--blue)}
+  select.status.s-interview{border-color:var(--green);color:var(--green)}
+  select.status.s-offer{border-color:var(--green);color:var(--green);font-weight:700}
+  select.status.s-rejected{border-color:var(--accent);color:var(--accent)}
+  select.status.s-notrelevant{border-color:var(--txt3);color:var(--txt3)}
+  .mini{background:none;border:none;color:var(--txt3);font-size:11.5px;cursor:pointer;padding:2px 4px}
+  .mini:hover{color:var(--txt)}
+  .jnotes{width:100%;margin-top:10px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:8px 12px;font-size:13px;outline:none;display:none;resize:vertical;min-height:54px;font-family:inherit}
+  .jnotes.open{display:block}
+  .jnotes:focus{border-color:var(--accent)}
+
+  /* companies table */
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .twrap{overflow-x:auto;border-radius:var(--radius)}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--txt3);text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--bg2);cursor:pointer;user-select:none;white-space:nowrap}
+  th:hover{color:var(--txt)}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);font-size:13.5px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:var(--card-hover)}
+  .cname{font-weight:700;color:var(--txt)}
+  .csub{font-size:11.5px;color:var(--txt3);margin-top:1px}
+  .clinks a{margin-right:10px;font-size:12.5px;white-space:nowrap}
+  input.cnotes{width:100%;min-width:140px;background:transparent;border:none;border-bottom:1px dashed var(--line);color:var(--txt2);font-size:12.5px;padding:3px 0;outline:none;font-family:inherit}
+  input.cnotes:focus{border-bottom-color:var(--accent)}
+
+  .empty{color:var(--txt3);text-align:center;padding:50px 0;font-size:14px}
+  .pipe-group h3{font-size:14px;margin:22px 0 10px;color:var(--txt2)}
+  .pipe-group h3 b{color:var(--txt)}
+
+  #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--card);border:1px solid var(--line);color:var(--txt);padding:10px 20px;border-radius:10px;font-size:13px;transition:transform .25s;z-index:99;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+  #toast.show{transform:translateX(-50%) translateY(0)}
+  footer{max-width:1200px;margin:34px auto 0;padding:0 22px;color:var(--txt3);font-size:11.5px}
+  kbd{background:var(--bg2);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:11px}
+  @media(max-width:640px){ .jtop{flex-direction:column} .jside{flex-direction:row;align-items:center} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hrow">
+    <h1>AMOTZ <span>//</span> JOB FINDER</h1>
+    <input id="search" type="search" placeholder="Search jobs & companies…  ( / )">
+    <span class="updated">Updated: <b id="lastUpdated">—</b></span>
+    <button class="hbtn" onclick="exportState()" title="Download your statuses & notes as JSON">⬇ Backup</button>
+    <button class="hbtn" onclick="importState()" title="Restore statuses & notes from a backup JSON">⬆ Restore</button>
+  </div>
+  <nav id="tabs"></nav>
+</header>
+
+<main>
+  <section id="view-overview"></section>
+  <section id="view-jobs" class="hidden">
+    <div class="filters">
+      <select id="f-status"><option value="">Status: all</option><option>New</option><option>Interested</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Not Relevant</option></select>
+      <select id="f-model"><option value="">Work model: all</option><option value="hybrid">Hybrid</option><option value="remote">Remote</option><option value="onsite">Onsite</option><option value="unknown">Unknown</option></select>
+      <select id="f-sort"><option value="tier">Sort: priority</option><option value="new">Sort: newest first</option><option value="company">Sort: company A–Z</option></select>
+      <label style="font-size:12.5px;color:var(--txt2);display:flex;gap:5px;align-items:center;cursor:pointer"><input type="checkbox" id="f-hidden"> show hidden</label>
+      <span class="fnote" id="jobcount"></span>
+    </div>
+    <div id="joblist"></div>
+  </section>
+  <section id="view-companies" class="hidden">
+    <div class="filters">
+      <select id="f-cat"><option value="">Category: all</option><option value="il-gaming">🇮🇱 Gaming</option><option value="il-creative-tech">🇮🇱 Creative-Tech</option><option value="intl-remote">🌍 Int'l Remote</option></select>
+      <select id="f-cstatus"><option value="">Status: all</option><option>Watching</option><option>Applied</option><option>In&nbsp;Contact</option><option>Interview</option><option>Not&nbsp;Relevant</option></select>
+      <span class="fnote" id="cocount"></span>
+    </div>
+    <div class="twrap"><table id="cotable"></table></div>
+  </section>
+  <section id="view-pipeline" class="hidden"></section>
+</main>
+
+<footer>
+  Data refreshes daily at 08:30 &nbsp;·&nbsp; summary lands at amotzalbert@gmail.com &nbsp;·&nbsp; your statuses, stars &amp; notes are saved locally in this browser (use <b>Backup</b> before switching machines) &nbsp;·&nbsp; press <kbd>/</kbd> to search
+</footer>
+
+<div id="toast"></div>
+<input type="file" id="importFile" accept=".json" style="display:none">
+
+<script>
+// cache-busted load: data.js is rewritten by the daily refresh and must never be served stale
+document.write('<script src="data.js?v=' + Date.now() + '"><\/script>');
+</script>
+<script>
+'use strict';
+const D = window.JF_DATA || {meta:{},jobs:[],companies:[]};
+const LS_KEY = 'jf-state-v1';
+let S = {};                      // {jobs:{id:{status,star,notes,hidden}}, companies:{id:{status,notes}}}
+try{ S = JSON.parse(localStorage.getItem(LS_KEY)) || {}; }catch(e){ S = {}; }
+S.jobs = S.jobs || {}; S.companies = S.companies || {};
+const save = ()=> localStorage.setItem(LS_KEY, JSON.stringify(S));
+
+const TIERS = {
+  1:{name:'IL Hybrid', flag:'🥇', cls:'b-t1'},
+  2:{name:'IL Remote', flag:'🥈', cls:'b-t2'},
+  3:{name:'IL Office', flag:'🥉', cls:'b-t3'},
+  4:{name:"Remote Int'l", flag:'🌍', cls:'b-t4'},
+};
+const JOB_STATUSES = ['New','Interested','Applied','Interview','Offer','Rejected','Not Relevant'];
+const CO_STATUSES  = ['Watching','Applied','In Contact','Interview','Not Relevant'];
+
+const esc = s => String(s??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const jState = id => S.jobs[id] || {};
+const cState = id => S.companies[id] || {};
+const setJ = (id,k,v)=>{ (S.jobs[id]=S.jobs[id]||{})[k]=v; save(); };
+const setC = (id,k,v)=>{ (S.companies[id]=S.companies[id]||{})[k]=v; save(); };
+const isNew = j => j.firstSeen && D.meta.lastUpdated && j.firstSeen.slice(0,10) === D.meta.lastUpdated.slice(0,10);
+const daysAgo = d => { if(!d) return null; const n = Math.round((Date.now()-new Date(d))/864e5); return n<=0?'today':n===1?'yesterday':n+'d ago'; };
+
+let curTab = 'overview', query = '';
+
+/* ---------- tabs ---------- */
+function tabDefs(){
+  const c = t => D.jobs.filter(j=>j.tier===t && !jState(j.id).hidden).length;
+  const pipeCount = D.jobs.filter(j=>['Interested','Applied','Interview','Offer'].includes(jState(j.id).status)).length;
+  return [
+    {id:'overview', label:'Overview'},
+    {id:'t1', label:'🥇 IL Hybrid', cnt:c(1)},
+    {id:'t2', label:'🥈 IL Remote', cnt:c(2)},
+    {id:'t3', label:'🥉 IL Office', cnt:c(3)},
+    {id:'t4', label:"🌍 Remote Int'l", cnt:c(4)},
+    {id:'companies', label:'🏢 Companies', cnt:D.companies.length},
+    {id:'pipeline', label:'📌 My Pipeline', cnt:pipeCount},
+  ];
+}
+function renderTabs(){
+  document.getElementById('tabs').innerHTML = tabDefs().map(t=>
+    `<div class="tab ${curTab===t.id?'active':''}" onclick="goTab('${t.id}')">${t.label}${t.cnt!=null?` <span class="cnt">${t.cnt}</span>`:''}</div>`).join('');
+}
+function goTab(id){ curTab = id; render(); }
+
+/* ---------- job rendering ---------- */
+function jobMatches(j){
+  if(!query) return true;
+  return (j.title+' '+j.company+' '+(j.whyFit||'')+' '+(j.location||'')+' '+(jState(j.id).notes||'')).toLowerCase().includes(query);
+}
+function jobCard(j){
+  const st = jState(j.id);
+  const status = st.status || 'New';
+  const nw = isNew(j);
+  const stale = j.lastSeen && D.meta.lastUpdated && j.lastSeen.slice(0,10) !== D.meta.lastUpdated.slice(0,10);
+  const t = TIERS[j.tier] || TIERS[3];
+  return `<div class="job ${['Applied','Rejected','Not Relevant'].includes(status)?'applied-dim':''}" data-id="${esc(j.id)}">
+    <div class="jtop">
+      <div class="jmain">
+        <div class="jtitle"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a></div>
+        <div class="jco"><a href="${esc(j.companyUrl||j.url)}" target="_blank" rel="noopener">${esc(j.company)}</a> · ${esc(j.location||'')}</div>
+        <div class="badges">
+          ${nw?'<span class="badge b-new">NEW</span>':''}
+          <span class="badge ${t.cls}">${t.flag} ${t.name}</span>
+          <span class="badge b-dim">${esc(j.workModel||'?')}</span>
+          ${j.seniority?`<span class="badge b-dim">${esc(j.seniority)}</span>`:''}
+          ${stale?'<span class="badge b-stale" title="Not found in the latest refresh — may be closed">⚠ recheck</span>':''}
+        </div>
+        ${j.whyFit?`<div class="jfit">${esc(j.whyFit)}</div>`:''}
+        <div class="jmeta">first seen ${esc(daysAgo(j.firstSeen)||'—')}${j.postedDate?` · posted ${esc(j.postedDate)}`:''}</div>
+      </div>
+      <div class="jside">
+        <div class="jrow2">
+          <button class="star ${st.star?'on':''}" title="Star" onclick="toggleStar('${esc(j.id)}',this)">★</button>
+          <select class="status s-${status.toLowerCase().replace(/ /g,'')}" onchange="setStatus('${esc(j.id)}',this)">
+            ${JOB_STATUSES.map(s=>`<option ${s===status?'selected':''}>${s}</option>`).join('')}
+          </select>
+        </div>
+        <div class="jrow2">
+          <button class="mini" onclick="toggleNotes(this)">✎ notes</button>
+          <button class="mini" onclick="toggleHide('${esc(j.id)}')">${st.hidden?'unhide':'hide'}</button>
+        </div>
+      </div>
+    </div>
+    <textarea class="jnotes ${st.notes?'open':''}" placeholder="Your notes…" onchange="setJ('${esc(j.id)}','notes',this.value);toast('Note saved')">${esc(st.notes||'')}</textarea>
+  </div>`;
+}
+function renderJobs(tier){
+  const showHidden = document.getElementById('f-hidden').checked;
+  const fs = document.getElementById('f-status').value;
+  const fm = document.getElementById('f-model').value;
+  const sort = document.getElementById('f-sort').value;
+  let list = D.jobs.filter(j => (tier?j.tier===tier:true) && jobMatches(j));
+  list = list.filter(j => showHidden || !jState(j.id).hidden);
+  if(fs) list = list.filter(j => (jState(j.id).status||'New')===fs);
+  if(fm) list = list.filter(j => (j.workModel||'unknown')===fm);
+  if(sort==='new') list.sort((a,b)=> (b.firstSeen||'').localeCompare(a.firstSeen||''));
+  else if(sort==='company') list.sort((a,b)=> a.company.localeCompare(b.company));
+  else list.sort((a,b)=> a.tier-b.tier || (b.firstSeen||'').localeCompare(a.firstSeen||''));
+  document.getElementById('jobcount').textContent = list.length + ' positions';
+  document.getElementById('joblist').innerHTML = list.length ? list.map(jobCard).join('') : '<div class="empty">Nothing matches — try clearing filters or search.</div>';
+}
+
+/* ---------- overview ---------- */
+function renderOverview(){
+  const v = document.getElementById('view-overview');
+  const cnt = t => D.jobs.filter(j=>j.tier===t && !jState(j.id).hidden).length;
+  const newJobs = D.jobs.filter(j=>isNew(j) && !jState(j.id).hidden);
+  const applied = D.jobs.filter(j=>['Applied','Interview','Offer'].includes(jState(j.id).status)).length;
+  const starred = D.jobs.filter(j=>jState(j.id).star);
+  v.innerHTML = `
+    <div class="stats">
+      <div class="stat" onclick="goTab('t1')"><div class="n" style="color:var(--t1)">${cnt(1)}</div><div class="l">🥇 Israel Hybrid</div></div>
+      <div class="stat" onclick="goTab('t2')"><div class="n" style="color:var(--t2)">${cnt(2)}</div><div class="l">🥈 Israel Remote</div></div>
+      <div class="stat" onclick="goTab('t3')"><div class="n" style="color:var(--t3)">${cnt(3)}</div><div class="l">🥉 Israel Office</div></div>
+      <div class="stat" onclick="goTab('t4')"><div class="n" style="color:var(--t4)">${cnt(4)}</div><div class="l">🌍 Remote International</div></div>
+      <div class="stat" onclick="goTab('pipeline')"><div class="n" style="color:var(--accent2)">${applied}</div><div class="l">📌 Active applications</div></div>
+    </div>
+    ${newJobs.length?`<div class="sec-title">🆕 New in the latest refresh (${newJobs.length})</div>${newJobs.map(jobCard).join('')}`:'<div class="sec-title">🆕 New in the latest refresh</div><div class="empty" style="padding:18px 0">No new positions in the latest refresh.</div>'}
+    ${starred.length?`<div class="sec-title">★ Starred</div>${starred.map(jobCard).join('')}`:''}
+    <div class="quick">
+      <h3>Quick searches</h3>
+      <div class="links">
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/search/?keywords=Art%20Director%20gaming&location=Israel&f_TPR=r86400">LinkedIn: Art Director · Israel · 24h</a>
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/search/?keywords=Creative%20Director&location=Israel&f_TPR=r86400">LinkedIn: Creative Director · Israel · 24h</a>
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/search/?keywords=Motion%20Design%20Lead&location=Israel&f_TPR=r604800">LinkedIn: Motion Lead · Israel · 7d</a>
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/jobs/search/?keywords=Marketing%20Creative%20Lead%20gaming&f_WT=2&f_TPR=r604800">LinkedIn: Creative Lead · Remote · 7d</a>
+        <a target="_blank" rel="noopener" href="https://hitmarker.net/jobs?query=art%20director&workingArrangements=remote">Hitmarker: remote game-art jobs</a>
+        <a target="_blank" rel="noopener" href="https://www.gamesjobsdirect.com/results?searchterm=art+director">GamesJobsDirect: Art Director</a>
+        <a target="_blank" rel="noopener" href="https://www.drushim.co.il/jobs/search/%D7%90%D7%A8%D7%98%20%D7%93%D7%99%D7%99%D7%A8%D7%A7%D7%98%D7%95%D7%A8/">Drushim: ארט דיירקטור</a>
+        <a target="_blank" rel="noopener" href="https://www.alljobs.co.il/SearchResultsGuest.aspx?page=1&position=1758&type=&freetxt=art+director">AllJobs: Art Director</a>
+      </div>
+    </div>`;
+}
+
+/* ---------- companies ---------- */
+const CAT = {'il-gaming':'🇮🇱 Gaming','il-creative-tech':'🇮🇱 Creative-Tech','intl-remote':"🌍 Int'l"};
+let coSort = {key:'name', dir:1};
+function renderCompanies(){
+  const fc = document.getElementById('f-cat').value;
+  const fs = document.getElementById('f-cstatus').value.replace(/ /g,' ');
+  let list = D.companies.filter(c=>{
+    if(fc && c.category!==fc) return false;
+    if(fs && (cState(c.id).status||'Watching')!==fs) return false;
+    if(query && !(c.name+' '+(c.notes||'')+' '+(cState(c.id).notes||'')).toLowerCase().includes(query)) return false;
+    return true;
+  });
+  list.sort((a,b)=>{
+    const k = coSort.key;
+    const av = k==='status' ? (cState(a.id).status||'Watching') : (a[k]||'');
+    const bv = k==='status' ? (cState(b.id).status||'Watching') : (b[k]||'');
+    return String(av).localeCompare(String(bv))*coSort.dir;
+  });
+  document.getElementById('cocount').textContent = list.length + ' companies';
+  document.getElementById('cotable').innerHTML = `
+    <tr><th onclick="sortCo('name')">Company</th><th onclick="sortCo('category')">Category</th><th onclick="sortCo('workCulture')">Work model</th><th>Links</th><th onclick="sortCo('status')">Status</th><th>My notes</th></tr>
+    ${list.map(c=>{
+      const st = cState(c.id);
+      const status = st.status||'Watching';
+      return `<tr>
+        <td><div class="cname">${esc(c.name)}</div><div class="csub">${esc(c.location||'')}${c.size?' · '+esc(c.size):''}</div><div class="csub">${esc(c.notes||'')}</div></td>
+        <td>${CAT[c.category]||esc(c.category||'')}</td>
+        <td>${esc(c.workCulture||'?')}</td>
+        <td class="clinks">
+          ${c.careersUrl?`<a href="${esc(c.careersUrl)}" target="_blank" rel="noopener">Careers ↗</a>`:''}
+          ${c.linkedinUrl?`<a href="${esc(c.linkedinUrl)}" target="_blank" rel="noopener">LinkedIn ↗</a>`:''}
+          <a href="https://www.google.com/search?q=${encodeURIComponent(c.name+' art director OR creative lead jobs')}" target="_blank" rel="noopener">Google ↗</a>
+        </td>
+        <td><select class="status s-${status.toLowerCase().replace(' ','')}" onchange="setC('${esc(c.id)}','status',this.value);renderTabs();toast('Saved')">
+          ${CO_STATUSES.map(s=>`<option ${s===status?'selected':''}>${s}</option>`).join('')}</select></td>
+        <td><input class="cnotes" value="${esc(st.notes||'')}" placeholder="add note…" onchange="setC('${esc(c.id)}','notes',this.value);toast('Note saved')"></td>
+      </tr>`;
+    }).join('')}`;
+}
+function sortCo(k){ coSort.dir = coSort.key===k ? -coSort.dir : 1; coSort.key=k; renderCompanies(); }
+
+/* ---------- pipeline ---------- */
+function renderPipeline(){
+  const v = document.getElementById('view-pipeline');
+  const groups = ['Offer','Interview','Applied','Interested','Rejected'];
+  let html = '';
+  for(const g of groups){
+    const jobs = D.jobs.filter(j=>jState(j.id).status===g && jobMatches(j));
+    if(!jobs.length) continue;
+    html += `<div class="pipe-group"><h3><b>${g}</b> · ${jobs.length}</h3>${jobs.map(jobCard).join('')}</div>`;
+  }
+  v.innerHTML = html || '<div class="empty">Your pipeline is empty — set a job\'s status to <b>Interested</b> or <b>Applied</b> and it shows up here.</div>';
+}
+
+/* ---------- actions ---------- */
+function setStatus(id, sel){ setJ(id,'status',sel.value); sel.className='status s-'+sel.value.toLowerCase().replace(/ /g,''); renderTabs(); toast('Status: '+sel.value); if(curTab==='pipeline') renderPipeline(); if(curTab==='overview') renderOverview(); }
+function toggleStar(id,btn){ setJ(id,'star',!jState(id).star); btn.classList.toggle('on'); }
+function toggleHide(id){ setJ(id,'hidden',!jState(id).hidden); render(); toast(jState(id).hidden?'Hidden':'Restored'); }
+function toggleNotes(btn){ btn.closest('.job').querySelector('.jnotes').classList.toggle('open'); }
+let toastT;
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),1600); }
+
+function exportState(){
+  const blob = new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'job-finder-backup-'+new Date().toISOString().slice(0,10)+'.json';
+  a.click(); toast('Backup downloaded');
+}
+function importState(){ document.getElementById('importFile').click(); }
+document.getElementById('importFile').addEventListener('change', e=>{
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ()=>{ try{ const d=JSON.parse(r.result); if(d.jobs||d.companies){ S=d; S.jobs=S.jobs||{}; S.companies=S.companies||{}; save(); render(); toast('Backup restored'); } else toast('Not a valid backup'); }catch(err){ toast('Not a valid backup'); } };
+  r.readAsText(f); e.target.value='';
+});
+
+/* ---------- render root ---------- */
+function render(){
+  renderTabs();
+  const views = {overview:'view-overview', companies:'view-companies', pipeline:'view-pipeline'};
+  document.querySelectorAll('main > section').forEach(s=>s.classList.add('hidden'));
+  if(curTab==='overview'){ document.getElementById('view-overview').classList.remove('hidden'); renderOverview(); }
+  else if(curTab==='companies'){ document.getElementById('view-companies').classList.remove('hidden'); renderCompanies(); }
+  else if(curTab==='pipeline'){ document.getElementById('view-pipeline').classList.remove('hidden'); renderPipeline(); }
+  else { document.getElementById('view-jobs').classList.remove('hidden'); renderJobs(+curTab.slice(1)); }
+}
+document.getElementById('search').addEventListener('input', e=>{ query = e.target.value.trim().toLowerCase(); render(); });
+['f-status','f-model','f-sort','f-hidden','f-cat','f-cstatus'].forEach(id=>document.getElementById(id).addEventListener('change',()=>render()));
+document.addEventListener('keydown', e=>{
+  if(e.key==='/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)){ e.preventDefault(); document.getElementById('search').focus(); }
+});
+document.getElementById('lastUpdated').textContent = D.meta.lastUpdated ? new Date(D.meta.lastUpdated).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : '—';
+render();
+</script>
+</body>
+</html>
