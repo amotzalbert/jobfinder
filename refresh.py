@@ -3,6 +3,7 @@
 
 Usage:
     python3 refresh.py                # merge found-jobs.json (+ optional found-companies.json) into data.js
+    python3 refresh.py --push         # same, then commit data.js and push to GitHub (updates the live site)
 
 Reads, from this script's own directory:
     data.js              existing dataset (window.JF_DATA = {...};)
@@ -22,7 +23,7 @@ Merge rules:
     - job unseen 30d+ -> dropped (listed in summary.removedJobs)
     - companies merged by slug(name); existing entries win, new ones appended.
 """
-import json, re, sys, unicodedata
+import json, re, subprocess, sys, unicodedata
 from datetime import date, datetime
 from pathlib import Path
 
@@ -181,7 +182,24 @@ def main() -> None:
         "removedJobs": [{"title": j["title"], "company": j["company"]} for j in removed],
     }
     (HERE / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(json.dumps({"ok": True, **counts, "new": len(new_jobs), "stale": len(stale), "removed": len(removed)}))
+
+    pushed = False
+    if "--push" in sys.argv:
+        try:
+            subprocess.run(["git", "-C", str(HERE), "add", "data.js"], check=True, capture_output=True)
+            diff = subprocess.run(["git", "-C", str(HERE), "diff", "--cached", "--quiet"])
+            if diff.returncode != 0:  # staged changes exist
+                subprocess.run(["git", "-C", str(HERE), "-c", "user.name=amotzalbert",
+                                "-c", "user.email=amotzalbert@gmail.com",
+                                "commit", "-m", f"Daily refresh {TODAY}: {len(new_jobs)} new / {len(kept)} total"],
+                               check=True, capture_output=True)
+                subprocess.run(["git", "-C", str(HERE), "push"], check=True, capture_output=True, timeout=120)
+                pushed = True
+        except Exception as e:  # never let publish failure kill the merge result
+            print(f"WARNING: git push failed: {e}", file=sys.stderr)
+
+    print(json.dumps({"ok": True, **counts, "new": len(new_jobs), "stale": len(stale),
+                      "removed": len(removed), "pushed": pushed}))
 
 
 if __name__ == "__main__":

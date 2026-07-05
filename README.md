@@ -2,7 +2,10 @@
 
 Personal job-search dashboard for gaming / creative-AI leadership roles.
 
-**Open it:** double-click `index.html` (works from `file://`, no server needed).
+**Live site:** https://amotzalbert.github.io/jobfinder/ (repo: `amotzalbert/jobfinder`)
+**Local:** double-click `index.html` (works from `file://`, no server needed).
+
+Note: statuses/notes are per-browser (localStorage) — the online site and the local file each keep their own; use Backup/Restore to move state between them.
 
 ## Priorities (baked into the tier system)
 1. 🥇 Israel Hybrid
@@ -22,7 +25,7 @@ Personal job-search dashboard for gaming / creative-AI leadership roles.
 ## Daily refresh (scheduled task `job-finder-daily-refresh`)
 Every day at **08:30**, a scheduled Claude task:
 1. Re-searches all sources for openings matching the profile
-2. Writes `found-jobs.json`, then runs `python3 refresh.py` (stable IDs, firstSeen/lastSeen, 30-day age-out)
+2. Writes `found-jobs.json`, then runs `python3 refresh.py --push` (stable IDs, firstSeen/lastSeen, 30-day age-out; commits & pushes `data.js` so the live site updates)
 3. Emails a daily summary via Zapier Gmail
 
 Runs only while the Claude desktop app is open; if it was closed at 08:30, it fires on next launch.
