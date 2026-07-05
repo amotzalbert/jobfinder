@@ -3,7 +3,7 @@
 window.JF_DATA = {
  "meta": {
   "lastUpdated": "2026-07-05",
-  "refreshNote": "4 new / 36 total"
+  "refreshNote": "0 new / 36 total"
  },
  "jobs": [
   {
