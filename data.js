@@ -3,7 +3,7 @@
 window.JF_DATA = {
  "meta": {
   "lastUpdated": "2026-07-07",
-  "refreshNote": "0 new / 40 total"
+  "refreshNote": "0 new / 39 total"
  },
  "jobs": [
   {
@@ -168,21 +168,6 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Art & Design dept role building playable-ad marketing creatives at the Coin Master maker — entry point into Moon Active's marketing-creative org.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-07",
-   "tier": 1
-  },
-  {
-   "id": "bria-ai-motion-designer",
-   "title": "Motion Designer",
-   "company": "Bria AI",
-   "location": "Tel Aviv District, Israel",
-   "workModel": "hybrid",
-   "url": "https://www.linkedin.com/jobs/view/4408255565",
-   "companyUrl": "https://bria.ai/careers",
-   "postedDate": "",
-   "seniority": "Mid-Senior",
-   "whyFit": "Motion role at a licensed visual gen-AI company — his motion craft plus hands-on gen-AI pipeline is the exact profile; live on Bria's own careers page.",
-   "firstSeen": "2026-07-06",
    "lastSeen": "2026-07-07",
    "tier": 1
   },
