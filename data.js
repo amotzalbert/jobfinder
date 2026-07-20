@@ -2,8 +2,8 @@
    your personal statuses/notes live in localStorage, not here. */
 window.JF_DATA = {
  "meta": {
-  "lastUpdated": "2026-07-19",
-  "refreshNote": "2 new / 55 total"
+  "lastUpdated": "2026-07-20",
+  "refreshNote": "11 new / 66 total"
  },
  "jobs": [
   {
@@ -18,7 +18,7 @@ window.JF_DATA = {
    "seniority": "Mid (2+ yrs)",
    "whyFit": "Creative AI company (LTX/Facetune); role explicitly asks to experiment with latest AI tools for motion/marketing creatives — his exact pipeline.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -48,7 +48,7 @@ window.JF_DATA = {
    "seniority": "Senior (5+ yrs)",
    "whyFit": "Explicitly requires expertise in AI-powered creative workflows and driving AI tool adoption; motion/video listed as advantage — near-perfect match.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -78,7 +78,7 @@ window.JF_DATA = {
    "seniority": "Senior (8+ yrs)",
    "whyFit": "Non-gaming employer that monetizes his gaming-vertical creative knowledge; prefers AI tool proficiency for creative workflows.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -93,7 +93,7 @@ window.JF_DATA = {
    "seniority": "Mid (2+ yrs)",
    "whyFit": "Wix Marketing motion studio producing branded video campaigns and animation — squarely in his motion-graphics wheelhouse.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -108,7 +108,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Major IPG-network ad agency with strong digital arm; explicitly wants Adobe + AI-tools proficiency for campaigns across offline and digital.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -138,7 +138,7 @@ window.JF_DATA = {
    "seniority": "Mid-senior",
    "whyFit": "Gaming animation role at the social-casino leader — same domain as his current Playstudios work.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -153,7 +153,7 @@ window.JF_DATA = {
    "seniority": "Mid-senior",
    "whyFit": "Character animation for immersive social-casino games at the biggest Israeli gaming employer.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -168,7 +168,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Art & Design dept role building playable-ad marketing creatives at the Coin Master maker — entry point into Moon Active's marketing-creative org.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -198,7 +198,22 @@ window.JF_DATA = {
    "seniority": "Mid-Senior",
    "whyFit": "Brand/marketing motion role on Lightricks' Creative & Design team at a flagship IL gen-AI company (LTX/Facetune) — his motion-graphics + AI-creative craft; Jerusalem hybrid.",
    "firstSeen": "2026-07-18",
-   "lastSeen": "2026-07-18",
+   "lastSeen": "2026-07-20",
+   "tier": 1
+  },
+  {
+   "id": "overwolf-motion-graphics-designer",
+   "title": "Motion Graphics Designer",
+   "company": "Overwolf",
+   "location": "Ramat Gan, Israel",
+   "workModel": "hybrid",
+   "url": "https://careers.overwolf.com/career/6F.A6B",
+   "companyUrl": "https://careers.overwolf.com/",
+   "postedDate": "",
+   "seniority": "Intermediate (4+ yrs)",
+   "whyFit": "IL-hybrid gaming brand/marketing motion role owning campaigns, product explainers and visual language — well within his broadcast/motion background, though pitched below Art Director level.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
    "tier": 1
   },
   {
@@ -213,7 +228,7 @@ window.JF_DATA = {
    "seniority": "Senior (8-10+ yrs)",
    "whyFit": "First-ever head-of-creative hire at a consumer travel-tech startup; requires creative/art direction plus proactive AI use to scale content.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -243,7 +258,7 @@ window.JF_DATA = {
    "seniority": "Mid (5+ yrs)",
    "whyFit": "AI-agent eCommerce startup where he'd own the entire creative output; requires creative team management and AI proficiency.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -258,7 +273,7 @@ window.JF_DATA = {
    "seniority": "Entry-Mid (3+ yrs video)",
    "whyFit": "Generating ads through AI video workflows (ComfyUI, Weavy, Flow) — matches his local AI video pipeline work, though title is below his seniority.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -273,7 +288,7 @@ window.JF_DATA = {
    "seniority": "Director",
    "whyFit": "Director-level art direction + team leadership at a digital software house; onsite 4 days/week in Caesarea is the main friction.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -288,7 +303,7 @@ window.JF_DATA = {
    "seniority": "Senior",
    "whyFit": "Senior After Effects motion-graphics role at a hit mobile-games studio (Dice Dreams) — direct match for 20+ years of motion graphics in gaming.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -303,7 +318,7 @@ window.JF_DATA = {
    "seniority": "Lead",
    "whyFit": "Leading a 2D art team at a top Israeli mobile studio — fits his art-direction and team-leadership background in casual/casino visuals.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -318,7 +333,7 @@ window.JF_DATA = {
    "seniority": "Senior",
    "whyFit": "Senior IC design role at a fast-growing mobile-games studio; adjacent hands-on option within his core industry.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -333,7 +348,7 @@ window.JF_DATA = {
    "seniority": "Lead / Senior",
    "whyFit": "Leads the AI creative workflow for a top casual publisher's marketing studio — directly maps his Gen-AI creative-pipeline leadership at Playstudios.",
    "firstSeen": "2026-07-06",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -348,7 +363,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "3D character/asset animation for hit mobile games at a top TLV studio — aligns with his 20+ yrs animation/motion background.",
    "firstSeen": "2026-07-10",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -363,7 +378,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Character/environment/promo art for mobile games — matches his art-direction and visual-asset craft.",
    "firstSeen": "2026-07-10",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -378,7 +393,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Bridges art and Unity pipeline — relevant to his hands-on production and pipeline experience.",
    "firstSeen": "2026-07-10",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -393,7 +408,7 @@ window.JF_DATA = {
    "seniority": "Entry-level",
    "whyFit": "3D art for mobile games at a leading TLV studio; solid domain fit though junior relative to his seniority.",
    "firstSeen": "2026-07-10",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -408,7 +423,52 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Game UI/UX design at a top TLV studio; overlaps his visual-design and product-facing creative work.",
    "firstSeen": "2026-07-10",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
+   "tier": 3
+  },
+  {
+   "id": "wix-base44-ai-creative-gen-base44",
+   "title": "AI Creative Gen - Base44",
+   "company": "Wix (Base44)",
+   "location": "Tel Aviv, Israel",
+   "workModel": "onsite",
+   "url": "https://jobs.smartrecruiters.com/Wix2/744000136413368-ai-creative-gen-base44",
+   "companyUrl": "https://www.wix.com/jobs",
+   "postedDate": "2026-07-08",
+   "seniority": "Mid-Senior",
+   "whyFit": "Exactly his Gen-AI creative pipeline specialty — directing AI models for cinematic video/still assets with hybrid production and compositing workflows.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
+   "tier": 3
+  },
+  {
+   "id": "wix-animator",
+   "title": "Animator",
+   "company": "Wix",
+   "location": "Tel Aviv, Israel",
+   "workModel": "onsite",
+   "url": "https://jobs.smartrecruiters.com/Wix2/744000135868264-animator",
+   "companyUrl": "https://www.wix.com/jobs",
+   "postedDate": "2026-07-05",
+   "seniority": "Mid-Senior",
+   "whyFit": "Wix motion studio role producing branded video campaigns alongside creative directors — squarely his 20+ years of motion graphics and broadcast animation.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
+   "tier": 3
+  },
+  {
+   "id": "wix-base44-motion-designer-base44",
+   "title": "Motion Designer - Base44",
+   "company": "Wix (Base44)",
+   "location": "Tel Aviv, Israel",
+   "workModel": "onsite",
+   "url": "https://jobs.smartrecruiters.com/Wix2/744000132934508-motion-designer-base44",
+   "companyUrl": "https://www.wix.com/jobs",
+   "postedDate": "2026-06-18",
+   "seniority": "Mid-Senior",
+   "whyFit": "Styleframes, storyboards and brand-consistent motion across digital platforms — core art-direction craft in a fast-moving AI product team.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
    "tier": 3
   },
   {
@@ -423,7 +483,7 @@ window.JF_DATA = {
    "seniority": "Head of / Director",
    "whyFit": "Own end-to-end creative across UA, store assets and trailers, leading a small artist/editor team — his exact wheelhouse, in his exact timezone.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -438,7 +498,7 @@ window.JF_DATA = {
    "seniority": "Mid-Senior",
    "whyFit": "Coordinating creative production and UA-funnel creative concepts for a casual-games publisher — mirrors his Playstudios creative-pipeline leadership.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -453,7 +513,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Marketing video concepts/scripts in After Effects for casual games — squarely his 20-year motion-graphics core.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -468,7 +528,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Promotional/store/social ad art for mobile games — easy fit alongside a broader search.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-17",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -483,7 +543,7 @@ window.JF_DATA = {
    "seniority": "Director",
    "whyFit": "Director-level remote role at a casual-mobile publisher; product-UI rather than marketing, but shipped-F2P visual design applies.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-17",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -498,7 +558,7 @@ window.JF_DATA = {
    "seniority": "Senior / AD",
    "whyFit": "Directing UA ad visuals for Clash of Clans / Monopoly GO / Merge Mansion — exact overlap with his mobile-gaming marketing art direction.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -513,7 +573,7 @@ window.JF_DATA = {
    "seniority": "Lead/Senior",
    "whyFit": "Explicitly wants familiarity with AI generation tools plus performance-creative judgment — his Gen-AI pipeline expertise is a differentiator.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -543,7 +603,7 @@ window.JF_DATA = {
    "seniority": "Senior AD",
    "whyFit": "Full-time ownership of creative strategy-to-execution for major gaming ads; mentoring designers matches his team-leadership record — note mandatory Prague weeks.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -558,7 +618,7 @@ window.JF_DATA = {
    "seniority": "Senior",
    "whyFit": "Marketing-creatives motion role at a top-3 mobile developer, UTC+3-friendly hours; 3D/motion plus casual-game marketing fits.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -573,7 +633,7 @@ window.JF_DATA = {
    "seniority": "Senior (5+ yrs)",
    "whyFit": "Motion design at an $11B AI-audio company — senior motion craft plus AI-creative positioning.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -588,7 +648,7 @@ window.JF_DATA = {
    "seniority": "Senior (Growth team)",
    "whyFit": "Growth-team brand/visual storytelling at a leading Gen-AI company — brand-design leadership plus AI fluency.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -603,7 +663,7 @@ window.JF_DATA = {
    "seniority": "Director",
    "whyFit": "Creative direction of thumb-stopping UA video ads, balancing data with creative risk — precisely his UA-creative leadership profile.",
    "firstSeen": "2026-07-04",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -618,7 +678,7 @@ window.JF_DATA = {
    "seniority": "Director / Lead (5+ yrs)",
    "whyFit": "Senior creative leadership at a fully-remote AI-first agency — his Gen-AI creative pipeline + team-lead profile, EMEA-scoped; IL-eligible.",
    "firstSeen": "2026-07-05",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -633,7 +693,7 @@ window.JF_DATA = {
    "seniority": "Director / Senior (5+ yrs)",
    "whyFit": "Leads AI-assisted video content for global brands — direct match to his motion/video craft plus hands-on Gen-AI video pipeline; IL-eligible.",
    "firstSeen": "2026-07-05",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -648,7 +708,7 @@ window.JF_DATA = {
    "seniority": "Lead / Senior (5+ yrs)",
    "whyFit": "Guides a global creative team across ads/branding/social with Gen-AI woven in — his team-lead + AI-augmented direction; IL-eligible.",
    "firstSeen": "2026-07-05",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -663,7 +723,7 @@ window.JF_DATA = {
    "seniority": "Mid-Senior (3–5 yrs)",
    "whyFit": "Hands-on AI-enhanced visual/creative production — fits his Gen-AI image/video craft, though below his seniority ceiling; IL-eligible.",
    "firstSeen": "2026-07-05",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -678,7 +738,7 @@ window.JF_DATA = {
    "seniority": "Mid-Senior",
    "whyFit": "2D/3D marketing video creatives in AE/Blender/Unity with AI woven in for speed — his motion craft + AI pipeline, fully remote EU timezone.",
    "firstSeen": "2026-07-06",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -693,7 +753,7 @@ window.JF_DATA = {
    "seniority": "Mid-Senior",
    "whyFit": "Dedicated gen-AI art role for a leading mobile publisher — his hands-on image/AI-art pipeline is the core requirement; confirm IL remote eligibility.",
    "firstSeen": "2026-07-06",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -708,7 +768,7 @@ window.JF_DATA = {
    "seniority": "Senior",
    "whyFit": "Performance-marketing video, playable end-cards and animated ad creative for a top mobile publisher — squarely his motion + UA-creative + Gen-AI wheelhouse; remote EMEA.",
    "firstSeen": "2026-07-09",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -723,7 +783,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Same UA-creative craft (video/playable/animated banners, Adobe + Unity) at mid-level; strong motion/Gen-AI fit, a notch below his AD seniority.",
    "firstSeen": "2026-07-09",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -738,7 +798,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Generative-AI text-to-video + prompt/post-production for casual-game marketing (Veo, Midjourney) — directly matches his hands-on Gen-AI motion pipeline; remote-eligible.",
    "firstSeen": "2026-07-10",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -753,7 +813,7 @@ window.JF_DATA = {
    "seniority": "Mid-Senior",
    "whyFit": "Remote-Europe art role owning the art pipeline for a top-5 mobile-games studio — leverages his 20+ yrs art/animation craft.",
    "firstSeen": "2026-07-10",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -768,7 +828,7 @@ window.JF_DATA = {
    "seniority": "Mid",
    "whyFit": "Marketing/store creatives (icons, feature graphics) with AI tools for a 250M-player publisher — matches his Gen-AI creative-marketing pipeline.",
    "firstSeen": "2026-07-10",
-   "lastSeen": "2026-07-17",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -783,7 +843,7 @@ window.JF_DATA = {
    "seniority": "Senior",
    "whyFit": "Builds AI-powered creative production pipelines across voice, music, image & video for enterprise clients — a direct match for his Gen-AI Creative Specialist + Art Director profile; fully remote, EMEA-friendly.",
    "firstSeen": "2026-07-15",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -792,13 +852,13 @@ window.JF_DATA = {
    "company": "CrazyLabs",
    "location": "Remote — EU (Berlin)",
    "workModel": "remote",
-   "url": "https://www.designremotejobs.com/job/crazylabs-ai-native-motion-designer-animator",
+   "url": "https://www.crazylabs.com/jobs/co/remote/A7.B69/ai-native-motion-designer-animator/all",
    "companyUrl": "https://www.crazylabs.com/jobs/",
    "postedDate": "",
    "seniority": "Mid-Senior",
    "whyFit": "Gen-AI marketing motion role at Israeli studio CrazyLabs — AI video pipelines (Runway/Kling/Veo) + After Effects polish maps to his motion-graphics + AI-augmented creative background (EU-remote).",
    "firstSeen": "2026-07-15",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -813,7 +873,7 @@ window.JF_DATA = {
    "seniority": "Mid-Senior",
    "whyFit": "Gen-AI video creative production at scale — squarely matches hands-on AI video/creative-pipeline expertise.",
    "firstSeen": "2026-07-19",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
    "tier": 4
   },
   {
@@ -828,7 +888,112 @@ window.JF_DATA = {
    "seniority": "Senior",
    "whyFit": "Senior marketing designer role built around generative-AI workflows — direct fit for AI-augmented creative craft.",
    "firstSeen": "2026-07-19",
-   "lastSeen": "2026-07-19",
+   "lastSeen": "2026-07-20",
+   "tier": 4
+  },
+  {
+   "id": "elevenlabs-ai-creative-producer",
+   "title": "AI Creative Producer",
+   "company": "ElevenLabs",
+   "location": "Remote — United Kingdom / EMEA",
+   "workModel": "remote",
+   "url": "https://jobs.ashbyhq.com/elevenlabs/3178581d-ea70-4dee-b018-2ce2d2a18bbe",
+   "companyUrl": "https://elevenlabs.io",
+   "postedDate": "2025-11-18",
+   "seniority": "Senior",
+   "whyFit": "Producing brand/marketing video with generative-AI tooling is exactly Amotz's Gen-AI creative pipeline plus 20 years of motion production.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
+   "tier": 4
+  },
+  {
+   "id": "gismart-head-of-creative-production-luvly",
+   "title": "Head of Creative Production (Luvly)",
+   "company": "Gismart",
+   "location": "Remote — worldwide (Gismart remote-first, EMEA hubs)",
+   "workModel": "remote",
+   "url": "https://gismart.com/vacancy/head-of-creative-production-2/",
+   "companyUrl": "https://gismart.com",
+   "postedDate": "",
+   "seniority": "Head / Director",
+   "whyFit": "Owns creative strategy for 20+ people across three performance-creative teams with AI integration — matches his Art Director of Creative Marketing scope at Playstudios.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
+   "tier": 4
+  },
+  {
+   "id": "gismart-creative-production-lead-dancebit",
+   "title": "Creative Production Lead (Dancebit)",
+   "company": "Gismart",
+   "location": "Remote — worldwide (Gismart remote-first, EMEA hubs)",
+   "workModel": "remote",
+   "url": "https://gismart.com/vacancy/head-of-creative-production/",
+   "companyUrl": "https://gismart.com",
+   "postedDate": "",
+   "seniority": "Lead / Senior",
+   "whyFit": "Leads marketers, designers and video editors on data-driven ad creative — a direct match to his UA-creative team leadership.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
+   "tier": 4
+  },
+  {
+   "id": "gismart-lead-creative-producer-mygrowth",
+   "title": "Lead Creative Producer (MyGrowth)",
+   "company": "Gismart",
+   "location": "Remote — worldwide (Gismart remote-first, EMEA hubs)",
+   "workModel": "remote",
+   "url": "https://gismart.com/vacancy/lead-creative-producer/",
+   "companyUrl": "https://gismart.com",
+   "postedDate": "",
+   "seniority": "Lead",
+   "whyFit": "Builds the creative strategy and an AI-adoption R&D unit for a 3+ person team — mirrors his AI-augmented creative pipeline work.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
+   "tier": 4
+  },
+  {
+   "id": "superside-lead-creative-strategist",
+   "title": "Lead Creative Strategist",
+   "company": "Superside",
+   "location": "Remote — global (60+ countries, EMEA friendly)",
+   "workModel": "remote",
+   "url": "https://careers.superside.com/jobs/lead-creative-strategist",
+   "companyUrl": "https://superside.com",
+   "postedDate": "",
+   "seniority": "Lead / Senior",
+   "whyFit": "Leads a strategist team and champions AI across the creative process for major brands — fits his creative-leadership plus Gen-AI positioning.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
+   "tier": 4
+  },
+  {
+   "id": "g5-games-creatives-project-manager",
+   "title": "Creatives Project Manager",
+   "company": "G5 Games",
+   "location": "Remote — no office restriction (EMEA-friendly)",
+   "workModel": "remote",
+   "url": "https://jobs.g5.com/remote/marketing_pr/214",
+   "companyUrl": "https://jobs.g5.com",
+   "postedDate": "",
+   "seniority": "Mid",
+   "whyFit": "End-to-end creative production ownership across mobile game studios — adjacent to his marketing-creative pipeline management, though below his usual level.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
+   "tier": 4
+  },
+  {
+   "id": "duckduckgo-creative-design-lead-marketing-campaigns",
+   "title": "Creative Design Lead (Marketing Campaigns)",
+   "company": "DuckDuckGo",
+   "location": "Remote — worldwide (fully distributed, 300+ people across 15+ countries; EMEA-friendly, no core hours)",
+   "workModel": "remote",
+   "url": "https://jobs.ashbyhq.com/duck-duck-go/2b76bbee-43df-48d4-ba9c-e7e0d6827d6a",
+   "companyUrl": "https://duckduckgo.com/hiring",
+   "postedDate": "2026-07-16",
+   "seniority": "Senior / Lead (9+ years hands-on marketing or advertising design)",
+   "whyFit": "Senior hands-on creative lead owning end-to-end consumer marketing campaigns plus designer mentoring — matches Amotz's 20+ years of art direction and team leadership, at a genuinely global-remote company.",
+   "firstSeen": "2026-07-20",
+   "lastSeen": "2026-07-20",
    "tier": 4
   }
  ],
@@ -1120,6 +1285,28 @@ window.JF_DATA = {
    "notes": "⚠ CAUTION: Take-Two laid off entire central AI team Apr 2026; net contracting. Take-Two's mobile arm; 'Connected Workplace' hybrid/onsite/remote; TLV office is creative-marketing focused"
   },
   {
+   "id": "appagent",
+   "name": "AppAgent",
+   "category": "intl-remote",
+   "location": "Remote — Prague HQ, EU timezone",
+   "careersUrl": "https://careers.appagent.com/",
+   "linkedinUrl": "https://www.linkedin.com/company/appagent/jobs/",
+   "size": "~60",
+   "workCulture": "remote",
+   "notes": "Mobile-games UA/creative agency. Runs a steady rotation of project-based Art Director / Creative Lead / Motion Designer roles for game ads — closest match to the Playstudios creative-marketing remit. Postings expire fast; re-check often."
+  },
+  {
+   "id": "duckduckgo",
+   "name": "DuckDuckGo",
+   "category": "intl-remote",
+   "location": "Remote — worldwide (fully distributed, 300+ across 15+ countries)",
+   "careersUrl": "https://duckduckgo.com/hiring",
+   "linkedinUrl": "https://www.linkedin.com/company/duck-duck-go/jobs/",
+   "size": "~300",
+   "workCulture": "remote",
+   "notes": "Fully distributed, no core hours — genuinely EMEA-compatible. Hiring a senior Creative Design Lead for marketing campaigns (9+ yrs, hands-on + mentoring). Region eligibility is not stated on the posting itself; worth confirming Israel is in scope before investing effort."
+  },
+  {
    "id": "easybrain",
    "name": "Easybrain",
    "category": "intl-remote",
@@ -1131,6 +1318,17 @@ window.JF_DATA = {
    "notes": "Sudoku.com / puzzle leader (Miniclip-owned); office-based Cyprus/Warsaw with relocation"
   },
   {
+   "id": "elevenlabs",
+   "name": "ElevenLabs",
+   "category": "intl-remote",
+   "location": "Remote — global hubs (London, NYC, Warsaw), EMEA-friendly",
+   "careersUrl": "https://elevenlabs.io/careers",
+   "linkedinUrl": "https://www.linkedin.com/company/elevenlabs/jobs/",
+   "size": "~600",
+   "workCulture": "remote",
+   "notes": "Gen-AI audio/voice company; consistently hiring brand, motion and AI-creative-producer roles. Strong Gen-AI creative-pipeline alignment. Job board runs on Ashby — the Ashby API is more reliable to query than the rendered page."
+  },
+  {
    "id": "g5-games",
    "name": "G5 Games",
    "category": "intl-remote",
@@ -1140,6 +1338,17 @@ window.JF_DATA = {
    "size": "~600",
    "workCulture": "remote-friendly",
    "notes": "Hidden-object/match-3; explicit Remote category — realistic remote-international option"
+  },
+  {
+   "id": "gismart",
+   "name": "Gismart",
+   "category": "intl-remote",
+   "location": "Remote-first, worldwide (roots in London/Minsk, EMEA hubs)",
+   "careersUrl": "https://gismart.com/vacancies/",
+   "linkedinUrl": "https://www.linkedin.com/company/gismart/jobs/",
+   "size": "~400",
+   "workCulture": "remote",
+   "notes": "Mobile apps/games publisher (Luvly, Dancebit, MyGrowth). Remote-first worldwide. Runs several parallel creative-production orgs per product, each hiring senior creative leadership with explicit AI-in-workflow expectations — richest new remote source this sweep."
   },
   {
    "id": "homa",
